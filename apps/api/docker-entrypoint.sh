@@ -14,7 +14,8 @@ if [ "$FLY_PROCESS_GROUP" = "app" ]; then
   node --max-old-space-size=8192 dist/src/index.js
 elif [ "$FLY_PROCESS_GROUP" = "worker" ]; then
   echo "RUNNING worker"
-  node --max-old-space-size=8192 dist/src/services/queue-worker.js
+  #node --max-old-space-size=8192 dist/src/services/queue-worker.js
+  node dist/src/services/queue-worker.js
 elif [ "$FLY_PROCESS_GROUP" = "index-worker" ]; then
   echo "RUNNING index worker"
   node --max-old-space-size=8192 dist/src/services/indexing/index-worker.js
